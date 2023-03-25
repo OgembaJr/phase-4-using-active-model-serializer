@@ -16,4 +16,9 @@ class MoviesController < ApplicationController
   def render_not_found_response
     render json: { error: "Movie not found" }, status: :not_found
   end
+
+  def summary
+    "#{self.object.title} - #{self.object.description[0..49]}..."
+  end
+  
 end
